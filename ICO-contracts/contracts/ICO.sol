@@ -23,8 +23,8 @@ contract ICO is Pausable{
     uint public availableTokensForCrowdSale;
     uint public availableTokensForCrowdSaleFirstWeek;
     uint public availableTokensForCrowdSaleSecondWeek;
-    uint public availableTokensForCrowdSaleThreeWeek;
-    uint public availableTokensForCrowdSaleFourWeek;
+    uint public availableTokensForCrowdSaleThirdWeek;
+    uint public availableTokensForCrowdSaleFourthWeek;
     
     uint public minPurchase;
 
@@ -43,9 +43,9 @@ contract ICO is Pausable{
         
         availableTokensForCrowdSale = tokenSaleAmount.mul(25).div(100); // for 4 weeks of crowdsale
         availableTokensForCrowdSaleFirstWeek = tokenSaleAmount.mul(15).div(100); // for 1st week of crowdsale 
-        availableTokensForCrowdSaleFirstWeek = tokenSaleAmount.mul(10).div(100); // for 2nd week of crowdsale
-        availableTokensForCrowdSaleFirstWeek = tokenSaleAmount.mul(5).div(100); // for 3rd week of crowdsale
-        availableTokensForCrowdSaleFirstWeek = tokenSaleAmount.mul(25).div(100); // for 4th week of crowdsale
+        availableTokensForCrowdSaleSecondWeek = tokenSaleAmount.mul(10).div(100); // for 2nd week of crowdsale
+        availableTokensForCrowdSaleThirdWeek = tokenSaleAmount.mul(5).div(100); // for 3rd week of crowdsale
+        availableTokensForCrowdSaleFourthWeek = tokenSaleAmount.mul(25).div(100); // for 4th week of crowdsale
     }
     
     function setTokenAddressandSendTokenAmount(address tokenAddress) public onlyAdmin{
@@ -132,13 +132,13 @@ contract ICO is Pausable{
             availableTokensForCrowdSaleSecondWeek.sub(tokenAmount);
         } else if (crowdSalePhasesTime <= block.timestamp + 21 days) {
             require(
-              tokenAmount <= availableTokensForCrowdSaleThreeWeek, 
+              tokenAmount <= availableTokensForCrowdSaleThirdWeek, 
               'Not enough tokens left for sale'
             );
             availableTokensForCrowdSaleThreeWeek.sub(tokenAmount);
         } else if (crowdSalePhasesTime <= block.timestamp + 28 days) {
             require(
-              tokenAmount <= availableTokensForCrowdSaleFourWeek, 
+              tokenAmount <= availableTokensForCrowdSaleFourthWeek, 
               'Not enough tokens left for sale'
             );
             availableTokensForCrowdSaleFourWeek.sub(tokenAmount);
