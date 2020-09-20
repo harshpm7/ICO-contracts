@@ -16,7 +16,7 @@ contract ICO is Pausable{
     uint public crowdSalePhasesTime;
     uint public tokenPrice; // 1000000000000000 // 0.001
     uint public ethPrice;
-    uint256 tokenSaleAmount = 12000000000; // 12.5 billion token for private sale, pre sale and crowd sale
+    uint256 tokenSaleAmount = 12500000000; // 12.5 billion token for private sale, pre sale and crowd sale
     
     uint public availableTokensForPrivateSale;
     uint public availableTokensForPreSale;
