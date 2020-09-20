@@ -41,11 +41,11 @@ contract ICO is Pausable{
         availableTokensForPrivateSale = tokenSaleAmount.mul(25).div(100);
         availableTokensForPreSale = tokenSaleAmount.mul(20).div(100);
         
-        availableTokensForCrowdSale = tokenSaleAmount.mul(25).div(100); // for 4 weeks of crowdsale
-        availableTokensForCrowdSaleFirstWeek = tokenSaleAmount.mul(15).div(100); // for 1st week of crowdsale 
-        availableTokensForCrowdSaleSecondWeek = tokenSaleAmount.mul(10).div(100); // for 2nd week of crowdsale
-        availableTokensForCrowdSaleThirdWeek = tokenSaleAmount.mul(5).div(100); // for 3rd week of crowdsale
-        availableTokensForCrowdSaleFourthWeek = tokenSaleAmount.mul(25).div(100); // for 4th week of crowdsale
+        availableTokensForCrowdSale = tokenSaleAmount.mul(55).div(100); // for 4 weeks of crowdsale
+        availableTokensForCrowdSaleFirstWeek = availableTokensForCrowdSale.mul(15).div(100); // for 1st week of crowdsale 
+        availableTokensForCrowdSaleSecondWeek = availableTokensForCrowdSale.mul(10).div(100); // for 2nd week of crowdsale
+        availableTokensForCrowdSaleThirdWeek = availableTokensForCrowdSale.mul(5).div(100); // for 3rd week of crowdsale
+        availableTokensForCrowdSaleFourthWeek = availableTokensForCrowdSale.mul(25).div(100); // for 4th week of crowdsale
     }
     
     function setTokenAddressandSendTokenAmount(address tokenAddress) public onlyAdmin{
